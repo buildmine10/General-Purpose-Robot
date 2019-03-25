@@ -12,12 +12,12 @@
 
 #include <frc/smartdashboard/SmartDashboard.h>
 
-#include "Motor.h"
 #include "MotorList.h"
 
 
 void Robot::RobotInit() {
-
+  MotorList motors = MotorList();
+  motors.addMotor(MotorType::TalonSRX, 1);
 }
 
 
