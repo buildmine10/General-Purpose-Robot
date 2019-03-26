@@ -34,21 +34,14 @@ enum MotorType{
 
 class MotorList {
  private:
-  //multiple different lists because I did not know how to make an dynamic array with different types in it.  Or rather, I didn't want to make one.
-  std::vector<Motor<frc::Talon>> TalonList;                                       // list number: 0
-  std::vector<Motor<frc::PWMTalonSRX>> PWMTalonSRXList;                           // list number: 1
-  std::vector<Motor<frc::Jaguar>> JaguarList;                                     // list number: 2
-  std::vector<Motor<frc::Victor>> VictorList;                                     // list number: 3
-  std::vector<Motor<frc::VictorSP>> VictorSPList;                                 // list number: 4
-  std::vector<Motor<frc::Spark>> SparkList;                                       // list number: 5
-  std::vector<Motor<ctre::phoenix::motorcontrol::can::WPI_TalonSRX>> TalonSRXList;// list number: 6
-  
-  std::vector<std::array<int, 2>> motorList;//stores the paths to find motors [list number, index in said list]
+  std::vector<Motor> motorList;
  public:
   MotorList();
 
   void addMotor(int motorType, int portNumber);
   void setSpeed(int motorId, float speed);
+  void* getMotorController(int motorId);
+  int getControllerType(int motorId);
 
   //TalonSRX exclusive functions
   int getSensorPosition(int motorId);//gets the position reading of the sensor on a TalonSRX.

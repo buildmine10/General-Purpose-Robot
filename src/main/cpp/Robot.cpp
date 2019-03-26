@@ -5,6 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+
 #include "Robot.h"
 
 #include <iostream>
@@ -12,12 +13,11 @@
 
 #include <frc/smartdashboard/SmartDashboard.h>
 
-#include "MotorList.h"
+#include "GlobalVariables.h"
 
 
 void Robot::RobotInit() {
-  MotorList motors = MotorList();
-  motors.addMotor(MotorType::TalonSRX, 1);
+  motors->addMotor(MotorType::TalonSRX, 1);
 }
 
 

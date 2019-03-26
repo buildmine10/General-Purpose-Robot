@@ -74,6 +74,12 @@
     "clocale": "cpp",
     "cstdarg": "cpp",
     "cwctype": "cpp",
-    "*.inc": "cpp"
+    "*.inc": "cpp",
+    "map": "cpp",
+    "set": "cpp",
+    "xtree": "cpp",
+    "hash_map": "cpp",
+    "hash_set": "cpp",
+    "unordered_set": "cpp"
   }
 }
